@@ -1,23 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ReadyList.Database.Models;
-using ReadyList.Services.Repository;
+﻿using ReadyList.Database.Models;
 
 namespace ReadyList.Database.Repository
 {
-    internal class MockRepository : IRepository
+    public class MockRepository : IRepository
     {
-        private IEnumerable<User> _users;
+        private readonly List<User> _users = new List<User>();
 
         public MockRepository()
         {
             for (var i = 1; i <= 5; i++)
             {
-                _users = new List<User>
-                {
+                _users.Add(
                     new()
                     {
                         UserId = Guid.NewGuid(),
@@ -26,8 +19,7 @@ namespace ReadyList.Database.Repository
                         LastName = $"LastName {i}",
                         Email = $"Email {i}",
                         Password = $"pas {i}",
-                    }
-                };
+                    });
             }
         }
 
@@ -50,6 +42,22 @@ namespace ReadyList.Database.Repository
         public void DeleteUser()
         {
             throw new NotImplementedException();
+        }
+
+        public User CrateUser(User user)
+        {
+            var newUser = new User
+            {
+                UserId = Guid.NewGuid(),
+                FirstName = $"FirstName {user.FirstName}",
+                MiddleName = $"MiddleName {user.MiddleName}",
+                LastName = $"LastName {user.LastName}",
+                Email = $"Email {user.Email}",
+                Password = $"pas {user.Password}",
+            };
+
+            _users.Add(newUser);
+            return newUser;
         }
     }
 }

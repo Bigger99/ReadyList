@@ -1,6 +1,6 @@
 ﻿using ReadyList.Database.Models;
 
-namespace ReadyList.Services.Repository
+namespace ReadyList.Database.Repository
 {
     public interface IRepository
     {
@@ -9,6 +9,8 @@ namespace ReadyList.Services.Repository
         public IEnumerable<User> GetAllUsers();
 
         public User GetUserById(Guid userId);
+
+        public User CrateUser(User user);
 
         public void EditUser();
 
