@@ -1,30 +1,43 @@
-﻿@inherits LayoutComponentBase
+﻿@using ReadyList.Database.Models;
+@inherits LayoutComponentBase
 
 <PageTitle>ReadyList</PageTitle>
 
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
-
-    <main>
-        <div class="top-row">
-            <div class="top-row-left">
-                <input class="search" type="text" placeholder="Поиск..." />
-            </div>
-            <div class="top-row-right">
-                <div class="notification">
-                    notification
-                </div>
-                <div class="profile">
-                    <img class="photo" src="favicon.ico" alt="Profile photo" />
-                    <div class="arrow"></div>
-                </div>
-            </div>
+@if (_user.Password != "123")
+{
+    <ReadyList.Pages.Validation User="_user" />
+}
+else
+{
+    <div class="page">
+        <div class="sidebar">
+            <NavMenu />
         </div>
 
-        <article class="content">
-            @Body
-        </article>
-    </main>
-</div>
+        <main>
+            <div class="top-row">
+                <div class="top-row-left">
+                    <input class="search" type="text" placeholder="Поиск..." />
+                </div>
+                <div class="top-row-right">
+                    <div class="notification">
+                        notification
+                    </div>
+                    <div class="profile">
+                        <img class="photo" src="favicon.ico" alt="Profile photo" />
+                        <div class="arrow"></div>
+                    </div>
+                </div>
+            </div>
+
+            <article class="content">
+                @Body
+            </article>
+        </main>
+    </div>
+}
+
+
+@code{
+    private User _user = new User();
+}

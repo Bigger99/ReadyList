@@ -1,0 +1,56 @@
+﻿.validation-form-wrapper{
+    display:flex;
+    width:100vw;
+    height:100vh;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.validation-form {
+    background-color: #f3f3f3;
+    width: 25em;
+    padding: 1em;
+    border: 1px solid #DDDDDD;
+    box-shadow: 4px 4px 32px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+}
+
+.form-title{
+    color: red;
+    text-align: center;
+    font-weight: bold;
+}
+
+.from-inputs {
+    padding: 10px;
+}
+
+.form-services {
+    display: flex;
+    justify-content: space-around;
+}
+
+.service {
+    width: 40px;
+    height: 40px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.google-service {
+    background-image: url("/images/validationServicesLogo/Google.svg");
+}
+
+.vk-service {
+    background-image: url("/images/validationServicesLogo/VK.svg");
+}
+
+.yandex-service {
+    background-image: url("/images/validationServicesLogo/Yandex.svg");
+}
+
+.apple-service {
+    background-image: url("/images/validationServicesLogo/Frame 14.svg");
+}
