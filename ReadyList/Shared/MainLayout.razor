@@ -3,12 +3,12 @@
 
 <PageTitle>ReadyList</PageTitle>
 
-@if (_user.Password != "123")
+@*@if (_user.Password != "123")
 {
     <ReadyList.Pages.Validation User="_user" />
 }
 else
-{
+{*@
     <div class="page">
         <div class="sidebar">
             <NavMenu />
@@ -35,7 +35,7 @@ else
             </article>
         </main>
     </div>
-}
+@*}*@
 
 
 @code{

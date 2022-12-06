@@ -16,10 +16,16 @@
     border-radius: 16px;
 }
 
-.form-title{
+.form-title {
     color: red;
     text-align: center;
     font-weight: bold;
+    font-family: 'Russo One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 0.05em;
 }
 
 .from-inputs {
@@ -37,6 +43,13 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
+}
+
+.btn-enter {
+    background: #dd6060;
+    width: 100%;
+    margin: 10px 0 0;
+    color:white;
 }
 
 .google-service {

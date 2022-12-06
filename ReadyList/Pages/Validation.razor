@@ -1,5 +1,6 @@
 ﻿@page "/validation"
 @using ReadyList.Database.Models;
+@inject NavigationManager NavigationManager
 
 <div class="validation-form-wrapper">
     <div class="validation-form">
@@ -20,12 +21,12 @@
                     <ValidationMessage For="@(() => _user.Email)" />
                 </div>
                 <div class="form-group">
-                    <label for="password" class="control-label">Password:</label>
+                    <label for="password" class="control-label">Пароль:</label>
                     <InputText id="password" @bind-Value="_user.Password" class="form-control"></InputText>
                     <ValidationMessage For="@(() => _user.Password)" />
                 </div>
 
-                <button type="submit" class="btn btn-success">Submit</button>
+                <button type="submit" class="btn btn-enter">Войти</button>
 
             </EditForm>
         </div>
@@ -68,7 +69,7 @@
         User.Email = _user.Email;
         User.Password = _user.Password;
 
-        StateHasChanged();
+        //NavigationManager.NavigateTo(nameof(MainLayout));
     }
 
     protected void HandleInvalidationSubmit()

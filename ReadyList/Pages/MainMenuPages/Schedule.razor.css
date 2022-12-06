@@ -1,0 +1,37 @@
+﻿.schedule-header{
+
+}
+
+.schedule-title {
+    color: var(--orange-color);
+    font-family: 'Russo One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.05em;
+}
+
+.week-scroll {
+}
+
+.left-arrow {
+}
+
+.day {
+}
+
+.right-arrow {
+}
+
+.selected-period {
+}
+
+.selected-period-dates {
+}
+
+.selected-period-choice {
+
+}
