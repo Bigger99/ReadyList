@@ -1,22 +1,77 @@
 ﻿@page "/schedule"
 
 <div class="schedule-header">
-    <h3 class="schedule-title">Расписание</h3>
 
-    <div class="week-scroll">
-        <div class="left-arrow"></div>
-        <div class="day"></div>
-        <div class="right-arrow"></div>
+    <div class="header-left-side">
+        <img src="/images/icons/icons_for_folders.svg" alt="schedule" class="schedule-icon" />
+        <h3 class="schedule-title">Расписание</h3>
+
+        <div class="week-scroll">
+            <div class="arrow left-arrow"></div>
+            <div class="day">@_currentDate</div>
+            <div class="arrow right-arrow"></div>
+        </div>
     </div>
 
     <div class="selected-period">
-        <div class="selected-period-dates"></div>
-        <div class="selected-period-choice"></div>
+        <div class="selected-period-dates">
+            @switch (_choosedPeriod)
+            {
+                case Period.Week:
+                    <span>@_currentWeek</span>
+                    break;
+                case Period.Mounth:
+                    <span>@_currentMounth</span>
+                    break;
+                case Period.Year:
+                    <span>@_currentYear</span>
+                    break;
+            }
+        </div>
+        <div class="selected-period-choice">
+            <div class="selected-period-week @(_choosedPeriod == Period.Week ? _cssActivePeriod : string.Empty)" @onclick="() => _choosedPeriod = Period.Week">Неделя</div>
+            <div class="selected-period-mounth @(_choosedPeriod == Period.Mounth ? _cssActivePeriod : string.Empty)" @onclick="()=> _choosedPeriod = Period.Mounth">Месяц</div>
+            <div class="selected-period-year @(_choosedPeriod == Period.Year ? _cssActivePeriod : string.Empty)" @onclick="() => _choosedPeriod = Period.Year">Год</div>
+        </div>
+        <div class="view-type">
+            <img src="./images/icons/ListView.svg" class="view view-list @(_choosedViewType == ViewType.List ? _cssActivePeriod : string.Empty)" @onclick="() => _choosedViewType = ViewType.List" />
+            <img src="./images/icons/CalendarView.svg" class="view view-calendar @(_choosedViewType == ViewType.Calendar ? _cssActivePeriod : string.Empty)" @onclick="() => _choosedViewType = ViewType.Calendar" />
+        </div>
     </div>
 
 </div>
 
 
 @code {
+    private string _cssActivePeriod = "active-tab";
+    private string _currentDate;
+    private string _currentWeek;
+    private string _currentMounth;
+    private string _currentYear;
+    private Period _choosedPeriod;
+    private ViewType _choosedViewType;
 
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        _currentDate = DateTime.Now.ToString("dd MMMM");
+        _currentWeek = DateTime.Now.ToString("M") + " - " + DateTime.Now.AddDays(7).ToString("M");
+        _currentMounth = DateTime.Now.ToString("MMMM");
+        _currentYear = DateTime.Now.ToString("yyy") + " год";
+        _choosedPeriod = Period.Week;
+        _choosedViewType = ViewType.List;
+    }
+
+    private enum Period
+    {
+        Week,
+        Mounth,
+        Year
+    }
+
+    private enum ViewType
+    {
+        List,
+        Calendar
+    }
 }

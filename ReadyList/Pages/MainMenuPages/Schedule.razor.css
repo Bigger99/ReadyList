@@ -1,5 +1,15 @@
 ﻿.schedule-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
 
+.schedule-icon{
+}
+
+.header-left-side{
+    display: flex;
+    align-items: center;
 }
 
 .schedule-title {
@@ -12,26 +22,79 @@
     display: flex;
     align-items: center;
     letter-spacing: 0.05em;
+    padding: 0;
+    margin: 1rem;
 }
 
 .week-scroll {
+    display: flex;
+    align-items: center;
+}
+
+.arrow {
+    width: 0.6rem;
+    height: 0.6rem;
+    border-top: 0.2rem solid var(--gray-color);
+    border-right: 0.2rem solid var(--gray-color);
 }
 
 .left-arrow {
+    transform: rotate(-135deg);
+    margin-right: 0.6rem;
 }
 
 .day {
+    color: var(--orange-color);
 }
 
 .right-arrow {
+    transform: rotate(45deg);
+    margin-left: 0.6rem;
 }
 
 .selected-period {
+    display: flex;
+    align-items: center;
 }
 
 .selected-period-dates {
+    color: var(--orange-color);
+    font-family: 'Russo One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: right;
+    letter-spacing: 0.05em;
 }
 
 .selected-period-choice {
+    display: flex;
+}
 
+.selected-period-choice > div {
+    border-radius: 8px;
+    color: var(--black-color);
+    padding: 0.3rem 0.8rem;
+    margin: 0 0.3rem;
+}
+
+.selected-period-choice > div:hover {
+    cursor: pointer;
+    outline: 1px solid var(--orange-color);
+}
+
+.active-tab {
+    background: var(--orange-color);
+    color: white;
+}
+
+.view {
+    border-radius: 8px;
+}
+
+.view:hover {
+    background: var(--orange-color);
+    cursor: pointer;
+    outline: 1px solid var(--orange-color);
 }
