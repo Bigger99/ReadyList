@@ -1,9 +1,14 @@
 ﻿@if (IssueList is not null)
 {
-    @foreach (var issue in IssueList)
+    @for (int i = 0; i < IssueList.Length; i++)
     {
-        <IssueViewer Issue="issue"/>
-    }
+        <IssueViewer Issue="IssueList[i]" />
+
+        if (IssueList.Length > i)
+        {
+            <br />
+        }
+    }  
 }
 
 @code {
