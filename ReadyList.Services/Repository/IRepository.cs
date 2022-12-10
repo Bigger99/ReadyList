@@ -1,27 +1,8 @@
-﻿using ReadyList.Database.Models;
+﻿using ReadyList.Database.Repository.Interfaces;
 
 namespace ReadyList.Database.Repository
 {
-    public interface IRepository
+    public interface IRepository : IUserRepositiry, IIssueRepositiry
     {
-        #region Users
-
-        public IEnumerable<User> GetAllUsers();
-
-        public User GetUserById(Guid userId);
-
-        public User CrateUser(User user);
-
-        public void EditUser();
-
-        public void DeleteUser();
-
-        #endregion
-
-        #region Tasks
-
-
-
-        #endregion
     }
 }

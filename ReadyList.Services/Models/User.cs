@@ -22,5 +22,7 @@ namespace ReadyList.Database.Models
         public string? MiddleName { get; set; }
 
         public string? LastName { get; set; }
+
+        public byte[]? Photo { get; set; }
     }
 }

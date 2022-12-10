@@ -1,0 +1,12 @@
+﻿@if (IssueList is not null)
+{
+    @foreach (var issue in IssueList)
+    {
+        <IssueViewer Issue="issue"/>
+    }
+}
+
+@code {
+    [Parameter]
+    public Issue[]? IssueList { get; set; }
+}

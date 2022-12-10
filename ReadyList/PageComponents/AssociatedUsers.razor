@@ -1,0 +1,21 @@
+﻿@if (Users is not null)
+{
+    @foreach (var user in Users)
+    {
+        <div class="circle-icon">
+            @if (user.Photo is not null)
+            {
+                <img src="@user.Photo">
+            }
+            else
+            {
+                <img src="~/images/icons/default-user.png">
+            }
+        </div>
+    }
+}
+
+@code {
+    [Parameter]
+    public User[]? Users { get; set; }
+}

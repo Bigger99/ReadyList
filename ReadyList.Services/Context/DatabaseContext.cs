@@ -8,6 +8,7 @@ namespace ReadyList.Database.Context
         #region Tables
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Issue> Issues { get; set; }
 
         #endregion
 

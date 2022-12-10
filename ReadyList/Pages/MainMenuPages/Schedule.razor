@@ -1,4 +1,5 @@
 ﻿@page "/schedule"
+@inject IRepository _database
 
 <div class="schedule-header">
 
@@ -38,16 +39,22 @@
             <img src="./images/icons/CalendarView.svg" class="view view-calendar @(_choosedViewType == ViewType.Calendar ? _cssActivePeriod : string.Empty)" @onclick="() => _choosedViewType = ViewType.Calendar" />
         </div>
     </div>
+</div>
 
+<div class="schedule-issues">
+    @if (_choosedViewType == ViewType.List)
+    {
+        <IssueListViewer IssueList="_database.GetAllIssues().ToArray()"/>
+    }
 </div>
 
 
 @code {
     private string _cssActivePeriod = "active-tab";
-    private string _currentDate;
-    private string _currentWeek;
-    private string _currentMounth;
-    private string _currentYear;
+    private string? _currentDate;
+    private string? _currentWeek;
+    private string? _currentMounth;
+    private string? _currentYear;
     private Period _choosedPeriod;
     private ViewType _choosedViewType;
 
