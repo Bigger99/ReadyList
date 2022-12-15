@@ -13,7 +13,7 @@ namespace ReadyList.Database.Models
 
         public DateTime? Date { get; set; }
 
-        public DateTime? Time { get; set; }
+        public TimeSpan? Time { get; set; }
 
         public User[]? AssociatedUsers { get; set; }
 
