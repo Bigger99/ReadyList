@@ -46,6 +46,10 @@
     {
         <IssueListViewer IssueList="_database.GetAllIssues().ToArray()"/>
     }
+    else if (_choosedViewType == ViewType.Calendar)
+    {
+        <IssueCalendarViewer/>
+    }
 </div>
 
 
