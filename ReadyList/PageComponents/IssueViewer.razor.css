@@ -1,1 +1,14 @@
-﻿
+﻿.issue-checkbox {
+    border-radius: 50%;
+    background-color: red;
+    width: 100px;
+    color: red;
+}
+
+.issue-info {
+    
+}
+
+.issue-header{
+   
+}

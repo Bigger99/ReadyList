@@ -1,0 +1,16 @@
+﻿input[type="checkbox"] {
+    border: 0 solid black;
+    width: 2rem;
+    height: 2rem;
+    clip-path: circle(46% at 50% 50%);
+}
+
+.checkbox-wrapper {
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
